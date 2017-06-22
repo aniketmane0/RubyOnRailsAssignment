@@ -1,0 +1,39 @@
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @employee.age %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @employee.designation %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @employee.project %>
+</p>
+
+<p>
+  <strong>Team lead:</strong>
+  <%= @employee.leader.name %>
+</p>
+<p>
+    <strong>Skills:</strong>
+    <% @employee.skills.each do |t| %>
+        <%= t.skill %> &nbsp
+    <% end %>
+</p>
+
+<p>
+  <strong>Number of skills:</strong>
+  <%= @employee.skills.count %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_path(@employee) %>
+<%= link_to 'Back', employees_path %>

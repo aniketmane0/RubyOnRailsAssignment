@@ -1,0 +1,19 @@
+<h1> Listing all the Leaders</h1>
+
+<%= link_to 'Assign a new leader', new_leader_path %>
+
+<table>
+  <tr>
+    <th> Team Lead</th>
+  </tr>
+<% @leaders.each do |leader| %>
+  <tr>
+    <td><%= leader.name %></td>
+    <td><%= link_to 'Show', leader_path(leader) %></td>
+    <td><%= link_to 'Edit', edit_leader_path(leader) %></td>
+    <td><%= link_to 'Destroy', leader_path(leader),
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<%end%>
+</table>
